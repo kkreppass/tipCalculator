@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>America Tip Calculator 미국 팁 계산기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="center-container">
+    <div id="imgBox"><img src="logo.png"></div>
+    <form id="inputForm">
+      <input type="number" id="numberInput" placeholder="How much($)" required>
+      <select id="dropdownMenu" required>
+        <option value="" disabled selected>Which situation?</option>
+        <option value="1">Restaurant - 식당</option>
+        <option value="2">Uber - 택시</option>
+        <option value="3">Haircut - 이발</option>
+        <option value="4">Massage - 마사지</option>
+      </select>
+      <select id="dropdownMenu1" required>
+        <option value="" disabled selected>Which country?</option>
+        <option value="1">America - 미국</option>
+        <option value="2">Russia - 러시아</option>
+        <option value="3">Canada - 캐나다</option>
+        <option value="4">Mexico - 멕시코</option>
+        <option value="5">India - 인도</option>
+        <option value="6">Australia - 호주</option>
+        <option value="7">Egypt - 이집트</option>
+        <option value="8">Chile - 칠레</option>
+        <option value="9">Argentina - 아르헨티나</option>
+        <option value="10">Other - 기타</option>
+      </select>
+      <button type="submit">Calculate</button>
+    </form>
+    
+    <div id="resultContainer">
+    </div>
+    <div id="imgBox1"><img src="bar.png"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
