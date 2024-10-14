@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>America Tip Calculator 미국 팁 계산기</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 </head>
 <body>
   <div class="center-container">
     <div id="imgBox"><img src="logo.png"></div>
+    <div style = "margin-bottom: 20px;">by Ukjae (<a href="https://instagram.com/kkreppass">@kkreppass</a>)</div>
     <form id="inputForm">
-      <input type="number" id="numberInput" placeholder="How much($)" required>
+      <input type="number" step = "0.00000000000001" id="numberInput" placeholder="How much($)" required>
       <select id="dropdownMenu" required>
         <option value="" disabled selected>Which situation?</option>
         <option value="1">Restaurant - 식당</option>
@@ -18,27 +20,46 @@
         <option value="3">Haircut - 이발</option>
         <option value="4">Massage - 마사지</option>
       </select>
-      <select id="dropdownMenu1" required>
-        <option value="" disabled selected>Which country?</option>
-        <option value="1">America - 미국</option>
-        <option value="2">Russia - 러시아</option>
-        <option value="3">Canada - 캐나다</option>
-        <option value="4">Mexico - 멕시코</option>
-        <option value="5">India - 인도</option>
-        <option value="6">Australia - 호주</option>
-        <option value="7">Egypt - 이집트</option>
-        <option value="8">Chile - 칠레</option>
-        <option value="9">Argentina - 아르헨티나</option>
-        <option value="10">Other - 기타</option>
-      </select>
-      <button type="submit">Calculate</button>
+      <div style="text-align: left;"><span style="text-align: left;">Which state? - 주를 선택하세요</span></div>
+      <div id="map"></div>
+      <div id="tax-info"></div>
+      <button id = "submit" type="submit">Calculate</button>
     </form>
-    
-    <div id="resultContainer">
-    </div>
-    <div id="imgBox1"><img src="bar.png"></div>
+    <div id = "recipt">
+      <div style="text-align: center; text-decoration: underline; font-size: 40px; font-weight: bold; margin-bottom: 10px;";>recipt</div>
+      <br>
+      <div>_______________________</div>
+      <br>
+      <div id="originalContainer">
+      </div>
+      <div id="tipContainer">
+      </div>
+      <div id="tipPercentContainer">
+      </div>
+      <div>_______________________</div>
+      <br>
+      <div id="resultContainer">
+      </div>
+      <div>_______________________</div>
+      <div class="dropdown">
+        <button class="dropbtn">
+        <span class="triangle-icon"></span>
+        Should tip culture disappear?
+        </button>
+      <div class="dropdown-content">
+        <p>
+          Workers tend to not be paid enough and they actually depend on tips to pay for living expenses, so from that viewpoint, tipping culture should not disappear.
+        </p>
+        <p>
+          However, As a consumer - the price of the service is already included in the price you pay for it, and the tip is a “bonus” to thank the restaurant for the service, no matter how good it is, and it's offensive to the restaurant to collect it as if it were a legitimate charge. From this perspective, people argue that tipping should be eliminated.
+        </p>
+        <p>
+          but, at some businesses there is the assumption that you will tip, regardless of the quality of service, so the automatic expectation of tipping culture should disappear.
+        </p>
+      </div>
   </div>
-
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
