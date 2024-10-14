@@ -117,7 +117,7 @@ div {
 
 
 .dropdown-content.show {
-  max-height: 500px;
+  max-height: 2000px;
 }
 
 .dropdown .show + .dropbtn .triangle-icon {
