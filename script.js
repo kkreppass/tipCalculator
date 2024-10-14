@@ -1,3 +1,4 @@
+// 코드 존나 스파게티
 document.addEventListener("DOMContentLoaded", function () {
     const stateTaxRates = {
         "Alabama": "4.00%",
@@ -53,21 +54,15 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     
     const taxInfoDiv = document.getElementById("tax-info");
-
-    // Initialize the map
     const map = L.map('map').setView([37.8, -96], 2);
-
-    // Add a tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
 
     }).addTo(map);
 
-    // Load GeoJSON data for US states
     fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
         .then(response => response.json())
         .then(data => {
-            // Add GeoJSON layer to the map
             L.geoJSON(data, {
                 style: function (feature) {
                     return {
@@ -90,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// 원가 팁 택스 퍽센트 
+
 let taxHowMuch = 0;
 document.getElementById('inputForm').addEventListener('submit', function(e) {
     e.preventDefault(); 
@@ -113,7 +108,7 @@ document.getElementById('inputForm').addEventListener('submit', function(e) {
        ~ 
        ${even(all2 * (1+String(taxHowMuch).split("%")[0]/100))}$`;
         tipContainer.textContent = 
-       `tip: ${even(Number(tip(numberInput, dropdownMenu)[0]))}$
+       `Recommended tip: ${even(Number(tip(numberInput, dropdownMenu)[0]))}$
         ~ 
         ${even(Number(tip(numberInput, dropdownMenu)[1]))}$`
         tipPercentContainer.textContent = `tip percent: ${tipPercent(numberInput, dropdownMenu)[0]} ~ ${tipPercent(numberInput, dropdownMenu)[1]}`;
@@ -155,7 +150,7 @@ document.getElementById('inputForm').addEventListener('submit', function(e) {
     dropbtn.addEventListener('click', function () {
       dropdownContent.classList.toggle('show');
       
-      // 삼각형 아이콘의 방향을 변경
+      // 삼각형
       if (dropdownContent.classList.contains('show')) {
         triangleIcon.style.transform = 'rotate(180deg)';
       } else {
